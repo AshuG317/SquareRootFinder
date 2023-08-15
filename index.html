@@ -1,0 +1,48 @@
+<html>
+<head>
+	<title> 	Square Root Finder App by Siddhesh </title>
+	<style>
+		* { fobt-size:50px; font-family:Impact; }
+		body { background-color:lightyellow; }
+	</style>
+	<script>
+		function check()
+		{
+			event.preventDefault();
+			let num = document.getElementById("num");
+			let ans = document.getElementById("ans");
+		
+			if (num.value < 0)
+			{
+				alert("Number should be greater than 0");
+				ans.innerHTML = "";
+				ans.focus();
+				return;
+			}
+			else if (num.value == "")
+			{
+				alert("U didn't enter any number");
+				ans.inneHTML = "";
+				num.focus();
+				return;
+			}
+			let n = parseFloat(num.value);
+			let r = n ** 0.5;
+			ans.innerHTML = r;
+		}
+	</script>
+</head>
+
+<body>
+<center>
+	<h1> Square Root Finder </h1> 
+	<form onsubmit="check()">
+	<input type="number" id="num" placeholder="Enter Positive Number"></input>
+	<br><br>
+	<input type="submit" value="Find Square Root"></input>
+	</form>
+	<h1 id="ans"></h1>
+</center>
+</body>
+
+</html>
